@@ -54,6 +54,7 @@ def total(arry):
 
 
 def printCard(user, computer, showFull_value=False):
+    """print 2 statments based value true or false \nex value=true\nby defualt value is false"""
     print(f"Your Cards :\t{user}, current score\t{total(user)}")
     if showFull_value:
         print(f"Ai Cards :\t{com}, current score\t{total(com)}")
