@@ -46,6 +46,7 @@ def card(arr):
 
 
 def total(arry):
+    """ return total of given array \nex: [2,2] = 4"""
     total = 0
     for i in range(0, len(arry)):
         total += arry[i]
