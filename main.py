@@ -2,7 +2,8 @@ import os
 import random
 import art
 
-def check(st,booled=True):
+
+def check(st, booled=True):
     if booled:
         checkd = input(st + "\t").lower()
         if checkd == "y":
@@ -14,6 +15,8 @@ def check(st,booled=True):
 
 
 def compare(user, com):
+    
+    """ Compare two Arrays and return which array win """
     if total(user) > 17 or total(com) > 17:
         if total(user) <= 21 and total(user) > total(com):
             print("You win")
@@ -23,13 +26,12 @@ def compare(user, com):
         else:
             print("Ai win")
         return True
- 
-    elif(total(user) > 21 and total(com) > 21):
+
+    elif total(user) > 21 and total(com) > 21:
         print("both Lose  Scores are greater then 21")
         return True
     else:
         False
-
 
 
 def card(arr):
@@ -57,7 +59,6 @@ def printCard(user, computer, showFull_value=False):
         print(f"Ai First card:\t{computer[0]}")
 
 
-
 game = "Do you want to play a game of Blackjack? Type 'y' or 'n':"
 chosse = "Type 'y' to get another card, type 'n' to pass:"
 
@@ -69,15 +70,14 @@ while check(game):
     com = card(cards)[1]
     print(cards)
     printCard(user, com)
-        
 
     while check(chosse):
         if compare(user, com):
             printCard(user, com, True)
             break
-        
-        elif len(cards) > 1:   # user card
-           
+
+        elif len(cards) > 1:  # user card
+
             ranGen1 = cards[random.randint(0, len(cards) - 1)]
             user.append(ranGen1)
             cards.remove(ranGen1)
