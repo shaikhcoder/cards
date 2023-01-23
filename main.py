@@ -35,6 +35,7 @@ def compare(user, com):
 
 
 def card(arr):
+    """ randomly get one item form array and return 2 array of 2 element"""
     ran1 = []
     for i in range(0, 4):
         rand = random.randint(0, len(arr) - 1)
